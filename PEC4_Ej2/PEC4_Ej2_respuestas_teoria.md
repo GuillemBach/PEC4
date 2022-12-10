@@ -2,7 +2,7 @@
 
 1. (0.75 puntos) ¿Qué comando debes utilizar para crear un nuevo proyecto Angular utilizando Angular CLI denominado vinoteca? (A las preguntas que te haga Angular CLI puedes contestar utilizando las opciones por defecto). Explica brevemente la estructura y ficheros que ha generado Angular CLI:
 
-  - Para crear un nuevo proyecto Anguar utilizando Angular CLI denominado vinoteca, tengo que utilizar el siguiente comando: <code> ng new vinoteca* <code>
+  - Para crear un nuevo proyecto Anguar utilizando Angular CLI denominado vinoteca, tengo que utilizar el siguiente comando: <code> ng new vinoteca* </code>
 
 - **Ficheros de configuración en la raíz del proyecto:**
    - tsconfig.json -> contiene la configuración general de escritura del código de TypeScript.
