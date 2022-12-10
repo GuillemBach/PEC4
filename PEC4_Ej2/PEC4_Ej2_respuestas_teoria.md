@@ -43,4 +43,4 @@
 
 3. (0.25 puntos) ¿Es posible poder inyectar el template y los estilos en línea de un componente sin necesidad de especificarlos en templateUrl, styleUrls? ¿Es recomendable hacer esto?
 
-   - Si que es posible, escribiendo directamente el código html o css en la propiedad (Ejemplo -> template: <code><h2>About Page</h2></code>). Solo se usaria en caso de código muy muy simple el cual no seria suficiente para formar una app entera. En todo caso, seria muy poco práctico hacerlo. No es nada recomendable, por lo que acabamos de comentar. Lo más recomendable es usar templateUrl y styleUrls para incluir un archivo esxterno html o css con una gran catidad de código.
+   - Si que es posible, escribiendo directamente el código html o css en la propiedad (Ejemplo -> <code>template: <'p>About Page</'p></code>). Solo se usaria en caso de código muy muy simple el cual no seria suficiente para formar una app entera. En todo caso, seria muy poco práctico hacerlo. No es nada recomendable, por lo que acabamos de comentar. Lo más recomendable es usar templateUrl y styleUrls para incluir un archivo esxterno html o css con una gran catidad de código.
