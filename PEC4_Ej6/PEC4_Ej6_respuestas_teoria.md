@@ -21,35 +21,31 @@
     2. **Emulated** -> Los estilos están preprocesados. Se añade un atributo de elemento host a cada selector que abarca el estilo del elemento host. Cada elemento DOM tiene un atributo _ngcontent, generado automáticamente y único en su host, adjunto. Estos identifican a qué host pertenece (a que componente pertenece) el elemento y, por lo tanto, qué estilos deben aplicarse a él.
        - Ejemplo:
 
-    <code>
-    @Component({
-        selector: 'app-emulated-encapsulation',
-        template: `
-            <'h2>Emulated</'h2>
-            <'div class="emulated-message">Emulated encapsulation</'div>
-            <'app-no-encapsulation></'app-no-encapsulation>
-        `,
-        styles: ['h2, .emulated-message { color: green; }'],
-        encapsulation: ViewEncapsulation.Emulated,
-    })
-    export class EmulatedEncapsulationComponent { }
-    </code>
+    - @Component({
+        - selector: 'app-emulated-encapsulation',
+        - template: `
+            - <'h2>Emulated</'h2>
+            - <'div class="emulated-message">Emulated encapsulation</'div>
+            - <'app-no-encapsulation></'app-no-encapsulation>
+        - `,
+        - styles: ['h2, .emulated-message { color: green; }'],
+        - encapsulation: ViewEncapsulation.Emulated,
+    - })
+    - export class EmulatedEncapsulationComponent { }
 
     3. **None** -> Elimina toda la encapsulación. Los estilos de cualquiera de las hojas de estilo, independientemente de que se apliquen directamente a un componente, se aplicarán globalmente a la aplicación.
        - Ejemplo:
 
-    <code>
-    @Component({
-        selector: 'app-no-encapsulation',
-        template: `
-            <'h2>None</'h2>
-            <'div class="none-message">No encapsulation</'div>
-        `,
-        styles: ['h2, .none-message { color: red; }'],
-        encapsulation: ViewEncapsulation.None,
-    })
-    export class NoEncapsulationComponent { }
-    </code>
+    - @Component({
+        - selector: 'app-no-encapsulation',
+        - template: `
+            - <'h2>None</'h2>
+            - <'div class="none-message">No encapsulation</'div>
+        - `,
+        - styles: ['h2, .none-message { color: red; }'],
+        - encapsulation: ViewEncapsulation.None,
+    - })
+    - export class NoEncapsulationComponent { }
 
 2. **¿Qué es el** shadow DOM **?**
 
@@ -63,16 +59,18 @@
 
 4. **¿Qué diferencias existen entre las estrategias** Default **y** OnPush **? ¿Cuándo debes usar una y otra? Ventajas e inconvenientes.**
 
-- Diferencias:
+- **Diferencias:**
    - En la estrategia Default, Angular no tendrá ninguna suposición sobre la dependencia del componente y comprobará cada componente desde el árbol de componentes de arriba a abajo cada vez que un evento active la detección de cambios en los eventos del navegador, temporizadores, XHR y promesas. En cambio, en la estrategia OnPush, Angular omite las comprobaciones de los componentes que utilizan la estrategia OnPush y todos sus componentes secundarios. Con esta estrategia, Angular solo actualizará el componente si ocurren una o más de estas condiciones:
       - La referencia de entrada ha cambiado
       - Un evento del componente o de uno de sus hijos.
       - La tubería asíncrona vinculada a la plantilla emite un nuevo valor.
       - Se activó manualmente la detección de cambios
       - Entre otros.
-- Cuándo usar una y otra?
+
+- **Cuándo usar una y otra?**
    - Podría ser más cómodo usar la opción predeterminada, segun las necesidades del proyecto y del programador, cuándo el proyecto tiene un tamaño 'pequeño' evitando asi tener más trabajo implementando la estrategia onPush y aprobechando así esta función que nos brinda Angular, sin embargo, a medida que la aplicación se haga más grande, la complejidad de la detección de cambios aumentará, afectado el rendimiento de la aplicación. Esa es la razón por la que podemos considerar OnPush como nuestra estrategia de detección de cambios para proyecto medianos y grandes. Como hemos mencionado, dependerá del tamaño del pryecto utilizar una estrategia u otra, ya que su elección tiene efecto directo en el rendimiento de la aplicación y por ende la experiencia del usuario.
-- Ventajas e inconvenientes:
+
+- **Ventajas e inconvenientes:**
    - Default -> La ventaja principal que nos ofrece esta estratégia es más comodidad y menos trabajo para usu uso e implementación dado que dicha estrategia está predefinida por Angular y hará una revisión entera de todos los componentes del proyecto para su correcta visualización. El principal inconveniente es la carga de trabajo que supone utilizar dicha estratégia en proyectos medianos y grandes, probocando efectes negativos en el rendimiento de la aplicación.
    - OnPush -> La ventaja principal de usar está estratégia es la eficiencia que ofrece en la aplicación a la hora de detectar los cambios y recargarlos en la plantilla, ya que, no se revisa en su totalidad el árbol de componentes. El principal inconveniente es la carga de trabajo que tiene que realizar el programador para la implementación de esta estratégia en comparación a la Default.
 
