@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="wineitem.component.css">
+<div id="container">
+    <div id="item" [ngStyle]="{'background-color':cambiarColor()}">
+        <img src="{{wine.imageURL}}">
+        <p>{{wine.name}}</p>
+        <p>{{wine.price}} €</p>
+        <div id="seleccion">
+            <span id="seleccionChild"><button id="less" (click)="menosCantidad()">-</button></span>
+            <span id="seleccionChild"> <p id="wineQ">{{wine.quantityInCart}} €</p></span>
+            <span id="seleccionChild"> <button (click)="masCantidad()">+</button></span>
+        </div>
+    </div>
+</div>

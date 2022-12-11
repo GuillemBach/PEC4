@@ -39,7 +39,7 @@
 
 - app.component.ts - @Component (selector, templateUrl, styleUrls).
 
-   -  La clase completa AppComponent se distribuye en otros archivos y mediante la función decoradora @Component le indicamos los otros archivos que pertenecen a este componente (selector = app-root, templateUrl = app.component.html, styleUrls = app.component.css)
+   -  La clase completa AppComponent se distribuye en otros archivos y mediante la función decoradora @Component (especie de método que recibe un objeto con la configuración del componente) le indicamos los otros archivos que pertenecen a este componente [selector = 'app-root' (nombre que va a tener la etiqueta HTML), templateUrl = app.component.html (ruta al fichero .html del componente), styleUrls = app.component.css (ruta al fichero .html de ese componente)]
 
 3. (0.25 puntos) ¿Es posible poder inyectar el template y los estilos en línea de un componente sin necesidad de especificarlos en templateUrl, styleUrls? ¿Es recomendable hacer esto?
 
