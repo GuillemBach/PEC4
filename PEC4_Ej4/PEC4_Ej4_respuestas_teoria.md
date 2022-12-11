@@ -24,9 +24,9 @@
       - HTML -> <code><li *ngFor="let item of items; let i=index">{{i}} - {{item.name}}</li></code>
    - Ejemplo con trackBy: 
       - HTML -> <code><li *ngFor="let item of items; let i=index; trackBy: trackByItems">{{i}} - {{item.name}}</li></code>
-      - TS -> trackByItems(index: number, item: any): number {return item.id;}
+      - TS -> <code>trackByItems(index: number, item: any): number {return item.id;}</code>
         - Cuando se proporciona esta función, la directiva utiliza el resultado de llamar a esta función para identificar el nodo del elemento, en lugar de la identidad del objeto en sí. La función recibe dos entradas, el índice de iteración y el ID del objeto del nodo (item).
 
 3. **¿Es posible ejecutar dos directivas estructurales simultáneamente? Explica la razón tanto si es si posible como si no lo es.**
 
-- 
+- Solo es posible aplicar una directiva estructural a un elemento huésped, por lo tanto, no es posible ejecutar dos directivas estructurales simultqniamente al mismo elemento. La razón de no poder usar dos directivas estructurales en un mismo elemento es porqué cuando dos directivas se colocan en el mismo elemento, no podemos decidir cuál tiene prioridad y esto produce conflicto en nuestro codigo y no tenemos los resultados esperados. Una solución, es usar cada una de las directivas en un elemento diferente pero que esten realcionados entre si, como podria ser: <ul> y <li>.
