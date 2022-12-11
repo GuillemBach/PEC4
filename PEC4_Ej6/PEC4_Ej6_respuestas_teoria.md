@@ -6,18 +6,18 @@
        - Ejemplo:
 
     <code>
-    @Component({
-        selector: 'app-shadow-dom-encapsulation',
-        template: `
-            <'h2>ShadowDom</'h2>
-            <'div class="shadow-message">Shadow DOM encapsulation</'div>
-            <'app-emulated-encapsulation></'app-emulated-encapsulation>
-            <'app-no-encapsulation></a'pp-no-encapsulation>
-        `,
-        styles: ['h2, .shadow-message { color: blue; }'],
-        encapsulation: ViewEncapsulation.ShadowDom,
-    })
-    export class ShadowDomEncapsulationComponent { }
+    - @Component({
+        - selector: 'app-shadow-dom-encapsulation',
+        - template: `
+            - <'h2>ShadowDom</'h2>
+            - <'div class="shadow-message">Shadow DOM encapsulation</'div>
+            - <'app-emulated-encapsulation></'app-emulated-encapsulation>
+            - <'app-no-encapsulation></a'pp-no-encapsulation>
+        - `,
+        - styles: ['h2, .shadow-message { color: blue; }'],
+        - encapsulation: ViewEncapsulation.ShadowDom,
+    - })
+    - export class ShadowDomEncapsulationComponent { }
     </code>
 
     2. **Emulated** -> Los estilos están preprocesados. Se añade un atributo de elemento host a cada selector que abarca el estilo del elemento host. Cada elemento DOM tiene un atributo _ngcontent, generado automáticamente y único en su host, adjunto. Estos identifican a qué host pertenece (a que componente pertenece) el elemento y, por lo tanto, qué estilos deben aplicarse a él.
@@ -39,7 +39,7 @@
 
     3. **None** -> Elimina toda la encapsulación. Los estilos de cualquiera de las hojas de estilo, independientemente de que se apliquen directamente a un componente, se aplicarán globalmente a la aplicación.
        - Ejemplo:
-       
+
     <code>
     @Component({
         selector: 'app-no-encapsulation',
