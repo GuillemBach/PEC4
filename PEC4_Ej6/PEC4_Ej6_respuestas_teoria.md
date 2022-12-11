@@ -4,6 +4,7 @@
 
     1. **ShadowDom** -> La aplicación utiliza la implementación nativa de shadow DOM del navegador. Los elementos se encapsulan dentro de un ShadowRoot (usado como elemento host del componente) y aplicar los estilos provistos de manera aislada.
        - Ejemplo:
+
     <code>
     @Component({
         selector: 'app-shadow-dom-encapsulation',
@@ -18,8 +19,10 @@
     })
     export class ShadowDomEncapsulationComponent { }
     </code>
+
     2. **Emulated** -> Los estilos están preprocesados. Se añade un atributo de elemento host a cada selector que abarca el estilo del elemento host. Cada elemento DOM tiene un atributo _ngcontent, generado automáticamente y único en su host, adjunto. Estos identifican a qué host pertenece (a que componente pertenece) el elemento y, por lo tanto, qué estilos deben aplicarse a él.
        - Ejemplo:
+
     <code>
     @Component({
         selector: 'app-emulated-encapsulation',
@@ -33,8 +36,10 @@
     })
     export class EmulatedEncapsulationComponent { }
     </code>
+
     3. **None** -> Elimina toda la encapsulación. Los estilos de cualquiera de las hojas de estilo, independientemente de que se apliquen directamente a un componente, se aplicarán globalmente a la aplicación.
        - Ejemplo:
+       
     <code>
     @Component({
         selector: 'app-no-encapsulation',
